@@ -1,4 +1,4 @@
-package bg.softuni.pathfinder;
+package bg.softuni.pathfinder.model;
 
 import bg.softuni.pathfinder.model.enums.RouteCategory;
 import jakarta.persistence.*;

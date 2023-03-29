@@ -1,6 +1,5 @@
 package bg.softuni.pathfinder.model;
 
-import bg.softuni.pathfinder.Category;
 import bg.softuni.pathfinder.model.enums.Level;
 import jakarta.persistence.*;
 
@@ -15,7 +14,7 @@ public class Route {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "gpx_coordinates", columnDefinition = "TEXT")
+    @Column(columnDefinition = "LONGTEXT", length = 3000)
     private String gpxCoordinates;
 
     @Enumerated(EnumType.STRING)
@@ -29,13 +28,12 @@ public class Route {
     @ManyToOne
     private User author;
 
-    @Column(name = "video_url")
     private String videoUrl;
 
     @OneToMany(targetEntity = Comment.class, mappedBy = "route", cascade = CascadeType.ALL)
     private Set<Comment> comments;
 
-    @OneToMany(mappedBy = "route")
+    @OneToMany(mappedBy = "route", fetch = FetchType.EAGER)
     private Set<Picture> pictures;
 
     @ManyToMany

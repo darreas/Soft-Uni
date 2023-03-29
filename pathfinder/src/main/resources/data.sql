@@ -1,11 +1,11 @@
 -- https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto.data-initialization.using-basic-sql-scripts
 
 -- user roles
-INSERT INTO roles (id, role)
+INSERT INTO roles (id, name)
 VALUES (1, 'ADMIN');
-INSERT INTO roles (id, role)
+INSERT INTO roles (id, name)
 VALUES (2, 'MODERATOR');
-INSERT INTO roles (id, role)
+INSERT INTO roles (id, name)
 VALUES (3, 'USER');
 
 -- some test users
@@ -151,8 +151,8 @@ INSERT INTO pictures(title, url, author_id, route_id)
 VALUES ('Shipka 2', 'http://res.cloudinary.com/ch-cloud/image/upload/v1630583467/koncyanx4gqwzt9vxgx4.jpg', 1, 4);
 
 
- INSERT INTO pictures(title, url, author_id, route_id)
- VALUES ('Aladja Manastir', 'http://res.cloudinary.com/ch-cloud/image/upload/v1630583842/qabnwpgq3pp1cui19nn5.jpg', 1, 5);
+INSERT INTO pictures(title, url, author_id, route_id)
+VALUES ('Aladja Manastir', 'http://res.cloudinary.com/ch-cloud/image/upload/v1630583842/qabnwpgq3pp1cui19nn5.jpg', 1, 5);
 
 INSERT INTO pictures(title, url, author_id, route_id)
 VALUES ('Aladja Manastir 2', 'http://res.cloudinary.com/ch-cloud/image/upload/v1630584095/aznlgfzoxpuvl5belukb.jpg', 1, 5);

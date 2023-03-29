@@ -13,7 +13,7 @@ public class Role {
 
     @Enumerated(EnumType.STRING)
     @Column(unique = true)
-    private UserRoles role;
+    private UserRoles name;
 
     public Role() {
     }
@@ -27,10 +27,10 @@ public class Role {
     }
 
     public UserRoles getName() {
-        return role;
+        return name;
     }
 
     public void setName(UserRoles role) {
-        this.role = role;
+        this.name = role;
     }
 }
