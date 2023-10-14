@@ -5,6 +5,8 @@ import bg.softuni.pathfinder.repository.RouteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class RouteService {
 
@@ -15,7 +17,7 @@ public class RouteService {
         this.routeRepository = routeRepository;
     }
 
-    public Route getMostCommented(){
+    public List<Route> getMostCommented(){
         return routeRepository.findMostCommented();
     }
 }

@@ -2,9 +2,12 @@ package bg.softuni.pathfinder.web;
 
 import bg.softuni.pathfinder.model.Route;
 import bg.softuni.pathfinder.service.RouteService;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import java.util.List;
 
 public class HomeController {
 
@@ -15,12 +18,13 @@ public class HomeController {
         this.routeService = routeService;
     }
 
-    @GetMapping("/home")
+    @GetMapping("/")
+    @Transactional
     public String home(Model model){
 
-        Route route = routeService.getMostCommented();
+        List<Route> routes = routeService.getMostCommented();
 
-        model.addAttribute("mostCommented", route);
+        model.addAttribute("mostCommented", routes.get(0));
 
 
         return "index";
